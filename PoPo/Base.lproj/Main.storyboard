@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="写真を選ぶ"/>
                                 <connections>
-                                    <segue destination="6f3-Fk-3qk" kind="modal" modalPresentationStyle="fullScreen" id="spk-oW-271"/>
+                                    <segue destination="6f3-Fk-3qk" kind="modal" modalPresentationStyle="fullScreen" id="KHc-ba-yBz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="画像を一括で編集するアプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiS-9N-Mwt">
@@ -73,11 +73,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKJ-SY-FJN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GKJ-SY-FJN">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GKJ-SY-FJN" firstAttribute="top" secondItem="jkt-7a-cYf" secondAttribute="top" id="0tV-qM-ie0"/>
+                                                <constraint firstItem="GKJ-SY-FJN" firstAttribute="leading" secondItem="jkt-7a-cYf" secondAttribute="leading" id="3Le-UE-10B"/>
+                                                <constraint firstItem="GKJ-SY-FJN" firstAttribute="centerX" secondItem="jkt-7a-cYf" secondAttribute="centerX" id="dtM-Ae-bsu"/>
+                                                <constraint firstItem="GKJ-SY-FJN" firstAttribute="centerY" secondItem="jkt-7a-cYf" secondAttribute="centerY" id="q2N-WY-w7I"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -87,9 +92,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PXa-cn-wcE"/>
-                                    <barButtonItem title="戻る" id="plQ-CW-1RY"/>
+                                    <barButtonItem title="戻る" id="plQ-CW-1RY">
+                                        <connections>
+                                            <action selector="backTapped:" destination="6f3-Fk-3qk" id="iiA-px-FE5"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="LqC-1n-zRH"/>
-                                    <barButtonItem title="選択解除" id="xsM-Xc-G3O"/>
+                                    <barButtonItem title="選択解除" id="xsM-Xc-G3O">
+                                        <connections>
+                                            <action selector="selectRelece:" destination="6f3-Fk-3qk" id="Ogd-Op-nxB"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AkY-zk-Ttd"/>
                                     <barButtonItem title="加工" id="EXn-hr-lEu">
                                         <connections>
@@ -103,6 +116,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="laY-lQ-Ech"/>
                     </view>
+                    <connections>
+                        <outlet property="toolBar" destination="zXs-8n-iHJ" id="4fl-eo-nWC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOF-9f-taC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

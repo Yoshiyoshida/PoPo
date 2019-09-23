@@ -14,6 +14,8 @@ class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionVi
     var myCollectionView: UICollectionView!
     var imageArray = [UIImage]()
     
+    @IBOutlet weak var toolBar: UIToolbar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Start")
@@ -28,10 +30,13 @@ class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionVi
         myCollectionView.register(PhotoItemCell.self, forCellWithReuseIdentifier: "imageCell")
         myCollectionView.backgroundColor = UIColor.white
         self.view.addSubview(myCollectionView)
+        self.view.bringSubviewToFront(toolBar as! UIView)
         
         myCollectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
         
+        
         grabPhotos()
+        print("111")
     }
     
     
@@ -116,6 +121,14 @@ class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    @IBAction func backTapped() {
+    }
+    
+    @IBAction func selectRelece() {
+    }
+    
     
 }//クラス終わり
 
