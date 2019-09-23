@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Photos
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
+    var myCollectionView: UICollectionView!
+    var imageArray = [UIImage]()
 
-    //写真選択画面を実装
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
     }
 
 

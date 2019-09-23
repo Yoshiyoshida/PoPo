@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Preview-->
         <scene sceneID="uw5-gy-n7K">
             <objects>
-                <viewController id="6f3-Fk-3qk" sceneMemberID="viewController">
+                <viewController id="6f3-Fk-3qk" customClass="imagePreview" customModule="PoPo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vRx-SA-Xve">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
