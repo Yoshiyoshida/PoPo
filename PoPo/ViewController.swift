@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import Photos
 
 class ViewController: UIViewController{
-    
-    var myCollectionView: UICollectionView!
-    var imageArray = [UIImage]()
+
 
     
     override func viewDidLoad() {
