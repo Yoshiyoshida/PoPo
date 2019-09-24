@@ -39,9 +39,10 @@ class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionVi
         print("111")
     }
     
-    @IBAction func backBtnPushed(sender: AnyObject) {
-        // 前の画面へ戻る
-        dismiss(animated: true, completion: nil)
+    // モーダルを閉じて前の画面へ戻る
+    @IBAction func backBtnPushed() {
+        print("backBtnPushed is called")
+        self.dismiss(animated: true, completion: nil)
     }
     
     //セルの数を定義
