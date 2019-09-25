@@ -8,15 +8,65 @@
 
 import UIKit
 import Photos
+import DKImagePickerController
 
-class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate{
+class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    @IBAction func backTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func selectRelece() {
+    }
+    
+    @IBOutlet weak var toolBar: UIToolbar!
+    
+    @IBOutlet weak var imageView: UIImageView!
+        
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            print("start")
+            didSelectAssets()
+            addSubview()
+            print("sed")
+        }
+        
+        var pickerController = DKImagePickerController()
+        
+        func didSelectAssets(){
+            pickerController.didSelectAssets = { (assets: [DKAsset]) in
+                print("didSelectAssets")
+                print(assets)
+            }
+            
+            self.present(pickerController, animated: true) {}
+        }
+        
+        func addSubview(){
+            let groupDataManagerConfiguration = DKImageGroupDataManagerConfiguration()
+            groupDataManagerConfiguration.fetchLimit = 10
+            groupDataManagerConfiguration.assetGroupTypes = [.smartAlbumUserLibrary]
+
+            let groupDataManager = DKImageGroupDataManager(configuration: groupDataManagerConfiguration)
+
+            self.pickerController = DKImagePickerController(groupDataManager: groupDataManager)
+            pickerController.inline = true
+            //pickerController.UIDelegate = CustomInlineLayoutUIDelegate(imagePickerController: pickerController)
+            pickerController.assetType = .allPhotos
+            pickerController.sourceType = .photo
+
+            let pickerView = self.pickerController.view!
+            pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 200)
+            self.view.addSubview(pickerView)
+        }
+}
+    /*
     var myCollectionView: UICollectionView!
     var imageArray = [UIImage]()
     
     
     
-    @IBOutlet weak var toolBar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,4 +230,5 @@ struct DeviceInfo {
             }
         }
     }
-}
+ */
+
