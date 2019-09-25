@@ -14,6 +14,8 @@ class imagePreview: UIViewController, UICollectionViewDataSource, UICollectionVi
     var myCollectionView: UICollectionView!
     var imageArray = [UIImage]()
     
+    
+    
     @IBOutlet weak var toolBar: UIToolbar!
     
     override func viewDidLoad() {
