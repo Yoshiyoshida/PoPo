@@ -16,8 +16,6 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func selectRelece() {
-    }
     
     @IBOutlet weak var toolBar: UIToolbar!
     
