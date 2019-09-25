@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Created Image Preview-->
         <scene sceneID="tQK-S0-SOo">
             <objects>
-                <viewController id="RAz-q0-238" sceneMemberID="viewController">
+                <viewController id="RAz-q0-238" customClass="CreatedImagePreview" customModule="PoPo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAr-WV-DmF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Tdb-pP-91B"/>
-                                    <barButtonItem title="戻る" id="YLr-7O-XBq"/>
+                                    <barButtonItem title="戻る" id="YLr-7O-XBq">
+                                        <connections>
+                                            <action selector="backTapped" destination="RAz-q0-238" id="tNV-Ce-m8R"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="VK8-P2-dnY"/>
                                     <barButtonItem title="選択解除" id="d5t-FU-fjb"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="iUB-3U-xcF"/>
