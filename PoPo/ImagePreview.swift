@@ -13,7 +13,6 @@ import DKImagePickerController
 class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     
-    @IBOutlet weak var imageView: UIImageView!
         
         
         override func viewDidLoad() {
