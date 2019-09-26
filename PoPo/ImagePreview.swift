@@ -12,6 +12,7 @@ import DKImagePickerController
 
 class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         
+        
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -34,6 +35,7 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 print("選択した写真の枚数 : \(assets.count)")
                 for asset in assets{
                     print(asset)
+                    
                 }
             }
             //モーダルを閉じる
