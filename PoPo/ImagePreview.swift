@@ -12,12 +12,6 @@ import DKImagePickerController
 
 class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    @IBAction func backTapped() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBOutlet weak var toolBar: UIToolbar!
     
     @IBOutlet weak var imageView: UIImageView!
         

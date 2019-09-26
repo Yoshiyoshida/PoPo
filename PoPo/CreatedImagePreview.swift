@@ -11,7 +11,5 @@ import UIKit
 
 class CreatedImagePreview: UIViewController{
     
-    @IBAction func backTapped() {
-        self.dismiss(animated: true, completion: nil)
-    }
+
 }
