@@ -13,10 +13,7 @@ import DKImagePickerController
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //選択した画像List
-    var DKAssets = [DKAsset]()
-    
-    var pickerController = DKImagePickerController()
+
     
     var window: UIWindow?
 
