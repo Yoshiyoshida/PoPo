@@ -11,16 +11,14 @@ import Photos
 import DKImagePickerController
 
 class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
-    
         
-        
+    
         override func viewDidLoad() {
             super.viewDidLoad()
-            print("startttttt")
+            print("To next page of image preview")
             didSelectAssets()
-            //addSubview()
-            print("sed")
+            addSubview()
+            print("viewDidLoad finish")
         }
         
     
@@ -32,18 +30,21 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
         func didSelectAssets(){
             pickerController.didSelectAssets = { (assets: [DKAsset]) in
                 print("写真を選択する")
-                print(assets)
+                print("asset配列 : \(assets)")
                 print("選択した写真の枚数 : \(assets.count)")
                 for asset in assets{
-                    print(asset.image as Any)
+                    print(asset)
                 }
             }
             //モーダルを閉じる
             self.present(pickerController, animated: true) {}
         }
     
-        
+        //モーダルの下の画面
         func addSubview(){
+            print("モーダルの下の画面---------------------")
+            
+            
             let groupDataManagerConfiguration = DKImageGroupDataManagerConfiguration()
             groupDataManagerConfiguration.fetchLimit = 20//選択できるs写真の数
             groupDataManagerConfiguration.assetGroupTypes = [.smartAlbumUserLibrary]
@@ -52,12 +53,14 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
             self.pickerController = DKImagePickerController(groupDataManager: groupDataManager)
             pickerController.inline = true
-            //pickerController.UIDelegate = CustomInlineLayoutUIDelegate(imagePickerController: pickerController)
+            pickerController.UIDelegate = CustomInlineLayoutUIDelegate(imagePickerController: pickerController)
             pickerController.assetType = .allPhotos
             pickerController.sourceType = .photo
 
+            print("\(self.pickerController.view!)")
+        
             let pickerView = self.pickerController.view!
-            pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 200)
+            pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 600)//選択した画像のひ画面設定
             self.view.addSubview(pickerView)
         }
     
