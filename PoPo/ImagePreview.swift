@@ -17,26 +17,35 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            print("start")
-            didSelectAssets()
-            addSubview()
+            print("start--------------------------------------------")
+            //didSelectAssets()
+            //addSubview()
             print("sed")
         }
         
+    
+        //Initialization and presentation
         var pickerController = DKImagePickerController()
         
+    
+        //モーダルViewで選択したら呼ばれる関数
         func didSelectAssets(){
             pickerController.didSelectAssets = { (assets: [DKAsset]) in
-                print("didSelectAssets")
+                print("写真を選択する")
                 print(assets)
+                print("選択した写真の枚数 : \(assets.count)")
+                for asset in assets{
+                    print(asset.image as Any)
+                }
             }
-            
+            //モーダルを閉じる
             self.present(pickerController, animated: true) {}
         }
+    
         
         func addSubview(){
             let groupDataManagerConfiguration = DKImageGroupDataManagerConfiguration()
-            groupDataManagerConfiguration.fetchLimit = 10
+            groupDataManagerConfiguration.fetchLimit = 20//選択できるs写真の数
             groupDataManagerConfiguration.assetGroupTypes = [.smartAlbumUserLibrary]
 
             let groupDataManager = DKImageGroupDataManager(configuration: groupDataManagerConfiguration)
@@ -51,6 +60,8 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
             pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 200)
             self.view.addSubview(pickerView)
         }
+    
+    
 }
     /*
     var myCollectionView: UICollectionView!

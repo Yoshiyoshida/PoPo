@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
         print("application")
+        
         let photos = PHPhotoLibrary.authorizationStatus()
         
         if photos == .notDetermined {
@@ -35,9 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else if photos == .authorized {
             gotoVC()
         }
+        */
         print("application fin")
         return true
+        
     }
+    /*
     func gotoVC() {
         DispatchQueue.main.async(execute: { () -> Void in
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -51,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window.makeKeyAndVisible()
             }
         })
-    }
+    }*/
     
     // MARK: UISceneSession Lifecycle
 
