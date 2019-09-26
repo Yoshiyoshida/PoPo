@@ -17,8 +17,8 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            print("start--------------------------------------------")
-            //didSelectAssets()
+            print("startttttt")
+            didSelectAssets()
             //addSubview()
             print("sed")
         }
