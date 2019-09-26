@@ -8,10 +8,16 @@
 
 import UIKit
 import Photos
+import DKImagePickerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    //選択した画像List
+    var DKAssets = [DKAsset]()
+    
+    var pickerController = DKImagePickerController()
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
