@@ -69,9 +69,9 @@
 			children = (
 				0890614B233905D4002AD28F /* AppDelegate.swift */,
 				0890614D233905D4002AD28F /* SceneDelegate.swift */,
-				08437E21233B547E00D2CFF2 /* CreatedImagePreview.swift */,
 				0890614F233905D4002AD28F /* ViewController.swift */,
 				08437DF923390CFE00D2CFF2 /* ImagePreview.swift */,
+				08437E21233B547E00D2CFF2 /* CreatedImagePreview.swift */,
 				08906151233905D4002AD28F /* Main.storyboard */,
 				08906154233905D4002AD28F /* Assets.xcassets */,
 				08906156233905D4002AD28F /* LaunchScreen.storyboard */,

@@ -53,6 +53,7 @@
                     <navigationItem key="navigationItem" id="GWJ-qD-baV">
                         <barButtonItem key="rightBarButtonItem" title="加工" id="WzK-BW-UGM">
                             <connections>
+                                <action selector="makeImage:" destination="6f3-Fk-3qk" id="KoA-fd-L1R"/>
                                 <segue destination="RAz-q0-238" kind="show" id="Yjq-Mw-WSU"/>
                             </connections>
                         </barButtonItem>
@@ -73,7 +74,11 @@
                         <viewLayoutGuide key="safeArea" id="oea-cR-7FT"/>
                     </view>
                     <navigationItem key="navigationItem" id="LXh-ht-wLl">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="KB0-lD-QS3"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="KB0-lD-QS3">
+                            <connections>
+                                <action selector="saveImage:" destination="RAz-q0-238" id="tnI-Ra-fbb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0K-y2-UdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

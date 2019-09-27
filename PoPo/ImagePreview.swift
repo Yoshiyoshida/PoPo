@@ -12,7 +12,8 @@ import DKImagePickerController
 
 class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         
-    var count : Int = 0
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
         //選択した画像List
     var DKAssets = [DKAsset]()
     
@@ -86,7 +87,8 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
             
             print("Asset数 : \(self.DKAssets.count)")
             pickerController.select(assets: self.DKAssets)
-        
+            
+            appDelegate.makeAssets = self.DKAssets
             //モーダルの表示形式とViewのデータを統括
             
             pickerController.inline = true
@@ -101,7 +103,6 @@ class imagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigat
             self.view.addSubview(pickerView)
             
         }
-    
     
 }
     /*
