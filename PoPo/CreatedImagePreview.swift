@@ -36,7 +36,7 @@ class CreatedImagePreview: UIViewController, UIImagePickerControllerDelegate, UI
         
         pickerController.select(assets: appDelegate.makeAssets)
         
-        print(pickerController.selectedAssets)
+        print("Assets : \(pickerController.selectedAssets)")
         //モーダルの表示形式とViewのデータを統括
         
         pickerController.inline = true
@@ -45,8 +45,7 @@ class CreatedImagePreview: UIViewController, UIImagePickerControllerDelegate, UI
         
         let pickerView = pickerController.view!
         
-        pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 600)//選択した画像のひ画面設定
-
+        pickerView.frame = CGRect(x: 0, y: 170, width: self.view.bounds.width, height: 600)//選択した画像の画面設定
         self.title = "選択した画像"
         self.view.addSubview(pickerView)
         
@@ -54,7 +53,7 @@ class CreatedImagePreview: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     @IBAction func saveImage(_ sender: Any) {
-        loadFromNSDefaults()
+        //loadFromNSDefaults()
     }
     
     
