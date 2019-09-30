@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import DKImagePickerController
-
+ 
 class CreatedImagePreview: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
